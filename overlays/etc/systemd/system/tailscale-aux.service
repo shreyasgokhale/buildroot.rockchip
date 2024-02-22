@@ -1,0 +1,12 @@
+[Unit]
+Description=Tailscale Auxillary service 
+Documentation=
+Wants=network-pre.target
+After=network-pre.target NetworkManager.service systemd-resolved.service tailscaled.service
+
+[Service]
+ExecStart=/root/startTailscale.sh
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

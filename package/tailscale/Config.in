@@ -1,0 +1,5 @@
+config BR2_PACKAGE_TAILSCALE
+        bool "tailscale"
+        help
+          custom tailscale package
+          https://pkgs.tailscale.com/stable/#static
