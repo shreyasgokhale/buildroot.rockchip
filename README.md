@@ -16,7 +16,7 @@ cd yourPath
 git clone git://git.busybox.net/buildroot buildroot
 
 # rock pi S tested with version : git checkout 2022.02.1
-# rock pi 3a tested with version : git checkout 2022.08.1
+# rock pi 3a tested with version : git checkout 2024.11.1
 # rock cm3 tested with version : git checkout 2022.08.2
 # rock 5b tested with version : git checkout 2022.05
 ```
@@ -24,7 +24,7 @@ git clone git://git.busybox.net/buildroot buildroot
 Make sure you have requirements :
 ```
 sudo apt-get install -y build-essential gcc g++ autoconf automake libtool bison flex gettext
-sudo apt-get install -y patch texinfo wget git gawk curl lzma bc quilt
+sudo apt-get install -y patch texinfo wget git gawk curl lzma bc quilt swig
 ```
 
 If building in a minimal Docker image, you will also require :
@@ -68,7 +68,12 @@ mkdir ../buildroot.dl
 ```
 
 # build the system
-
+## rock3a build
+rkbin must be built before uboot and the kernel as they depend on rockchip binaries from this package, run the following before running a full make
+```
+make rkbin
+```
+## general build
 ```
 make
 ```
